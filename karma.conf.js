@@ -13,8 +13,15 @@ module.exports = function (config) {
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
+      captureConsole: true,
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
+    browserConsoleLogOptions: {
+      level: 'log',
+      format: '%b %T: %m',
+      terminal: true
+    },
+    logLevel: config.LOG_INFO,
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, './coverage/ag-grid-angular-license-test'),
       reports: ['html', 'lcovonly', 'text-summary'],
